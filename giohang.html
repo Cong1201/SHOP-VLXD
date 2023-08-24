@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Thêm và Xóa khỏi giỏ hàng</title>
+  </head>
+  <body>
+    <h1>Sản phẩm 1</h1>
+    <p>Tên sản phẩm: Máy tính xách tay</p>
+    <p>Giá: $1000</p>
+    <button onclick="themVaoGioHang('Máy tính xách tay', 1000)">
+      Thêm vào giỏ hàng
+    </button>
+
+    <h1>Sản phẩm 2</h1>
+    <p>Tên sản phẩm: Điện thoại di động</p>
+    <p>Giá: $500</p>
+    <button onclick="themVaoGioHang('Điện thoại di động', 500)">
+      Thêm vào giỏ hàng
+    </button>
+
+    <h2>Giỏ hàng</h2>
+    <ul id="gioHang">
+      <!-- Danh sách sản phẩm trong giỏ hàng sẽ được hiển thị ở đây -->
+    </ul>
+
+    <script>
+      // Mảng để lưu trữ các sản phẩm trong giỏ hàng
+      var gioHang = [];
+
+      function themVaoGioHang(tenSanPham, giaSanPham) {
+        // Tạo một đối tượng sản phẩm mới
+        var sanPham = {
+          ten: tenSanPham,
+          gia: giaSanPham,
+        };
+
+        // Thêm sản phẩm vào giỏ hàng
+        gioHang.push(sanPham);
+
+        // Cập nhật giao diện hiển thị giỏ hàng
+        hienThiGioHang();
+      }
+
+      function xoaKhoiGioHang(index) {
+        // Xóa sản phẩm khỏi giỏ hàng bằng cách chỉ định vị trí (index)
+        gioHang.splice(index, 1);
+
+        // Cập nhật giao diện hiển thị giỏ hàng
+        hienThiGioHang();
+      }
+
+      function hienThiGioHang() {
+        var ul = document.getElementById("gioHang");
+        ul.innerHTML = ""; // Xóa nội dung cũ trong giỏ hàng
+
+        // Hiển thị danh sách sản phẩm trong giỏ hàng
+        for (var i = 0; i < gioHang.length; i++) {
+          var li = document.createElement("li");
+          li.textContent = gioHang[i].ten + " - $" + gioHang[i].gia;
+
+          // Tạo nút "Xóa" cho mỗi sản phẩm
+          var btnXoa = document.createElement("button");
+          btnXoa.textContent = "Xóa";
+
+          // Sử dụng một biến tạm thời để lưu trữ giá trị của i
+          var index = i;
+
+          btnXoa.onclick = function () {
+            xoaKhoiGioHang(index);
+          };
+
+          li.appendChild(btnXoa);
+          ul.appendChild(li);
+        }
+      }
+    </script>
+  </body>
+</html>
