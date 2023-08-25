@@ -227,10 +227,9 @@
             <div class="header__cart">
               <div class="header__cart-wrap">
                 <i class="header__cart-icon fa-solid fa-cart-shopping"></i>
-                <div
-                  class="header__cart-list header__cart-list--no-cart"
-                  id="gioHang"
-                >
+                <span class="header__cart-notice">3</span>
+                <!-- No cart: header__cart-list--no-cart -->
+                <div class="header__cart-list" id="gioHang">
                   <img
                     src="./assets/img/no-cart.png"
                     alt=""
@@ -1164,7 +1163,7 @@
       <div class="modal__overlay"></div>
       <div class="modal__body">
         <!-- Register form -->
-        <div class="auth-form">
+        <!-- <div class="auth-form">
           <div class="auth-form__container">
             <div class="auth-form__header">
               <h3 class="auth-form__heading">Đăng ký</h3>
@@ -1226,10 +1225,10 @@
               ><span class="auth-form__socials-title"> Kết nối với Google</span>
             </a>
           </div>
-        </div>
+        </div> -->
 
         <!-- Login form -->
-        <!-- <div class="auth-form">
+        <div class="auth-form">
           <div class="auth-form__container">
             <div class="auth-form__header">
               <h3 class="auth-form__heading">Đăng nhập</h3>
@@ -1284,9 +1283,10 @@
               ><span class="auth-form__socials-title"> Kết nối với Google</span>
             </a>
           </div>
-        </div> -->
+        </div>
       </div>
     </div>
+
     <script>
       // Mảng để lưu trữ các sản phẩm trong giỏ hàng
       var gioHang = [];
