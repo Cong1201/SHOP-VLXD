@@ -194,7 +194,7 @@
   animation: headerNotifyGrowth ease-in 0.2s;
   display: none;
   will-change: opacity, tranform;
-  z-index: 1;
+  z-index: 3;
 }
 .header__notify::before {
   content: "";
@@ -727,7 +727,7 @@
 /* Search history */
 .header__search-history {
   position: absolute;
-  z-index: 1;
+  z-index: 2;
   top: calc(100% + 2px);
   left: 0;
   width: calc(100% - 16px);
